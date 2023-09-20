@@ -1,8 +1,8 @@
-package zazergel.bracket_checker;
+package com.zazergel.bracketchecker;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import zazergel.bracket_checker.service.BracketCheckerServiceImpl;
+import com.zazergel.bracketchecker.service.BracketCheckerServiceImpl;
 
 class BracketCheckerServiceImplTest {
     BracketCheckerServiceImpl bracketCheckerServiceImpl = new BracketCheckerServiceImpl();

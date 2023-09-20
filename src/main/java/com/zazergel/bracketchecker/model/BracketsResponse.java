@@ -1,4 +1,4 @@
-package zazergel.bracket_checker.model;
+package com.zazergel.bracketchecker.model;
 
 public class BracketsResponse {
 

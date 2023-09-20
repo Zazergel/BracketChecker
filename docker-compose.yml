@@ -1,7 +1,7 @@
 version: '3.1'
 services:
-  bracket_checker:
+  bracketchecker:
     build: ./
-    container_name: bracket_checker
+    container_name: bracketChecker
     ports:
       - "8080:8080"
