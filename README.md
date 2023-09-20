@@ -50,7 +50,7 @@ git clone https://github.com/Zazergel/BracketChecker.git
 
 2. Установите [Docker](https://www.docker.com/products/docker-desktop/)
 
-3. Запустите проект с помощью DockerFile
+3. Запустите проект с помощью Docker-compose
 
 4. Отправьте POST запрос содержащий в теле JSON 
 ```sh
