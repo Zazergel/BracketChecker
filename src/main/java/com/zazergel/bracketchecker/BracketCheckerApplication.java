@@ -1,4 +1,4 @@
-package zazergel.bracket_checker;
+package com.zazergel.bracketchecker;
 
 
 import org.springframework.boot.SpringApplication;
