@@ -35,7 +35,7 @@ class BracketCheckerControllerTest {
     @BeforeEach
     public void beforeEach() {
         request.setText("Обычный текст (с корректно расставленными) скобками.");
-        request2.setText("o".repeat(600));
+        request2.setText("o".repeat(1100));
         request3.setText("");
     }
 
