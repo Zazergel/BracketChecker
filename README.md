@@ -1,19 +1,21 @@
 <br/>
 <p align="center">
   <a href="https://github.com/Zazergel/BracketChecker">
-    <img src="https://raw.githubusercontent.com/Zazergel/BracketChecker/main/logo_bc.png" alt="Logo" width="400" height="300">
+    <img src="https://raw.githubusercontent.com/Zazergel/BracketChecker/main/logo_bc.png" alt="Logo" width="400" height="270">
   </a>
   <h3 align="center">BracketChecker</h3>
   <p align="center">
     Check your text for correct bracket placement!
     <br/>
-    <a href="https://github.com/Zazergel/BracketChecker/issues">Report Bug</a>
-    .
+    <a href="https://github.com/Zazergel/BracketChecker/issues">Report Bug</a> *
     <a href="https://github.com/Zazergel/BracketChecker/issues">Request Feature</a>
   </p>
 </p>
+<div class="header" markdown="1" align="center">
 
-![Downloads](https://img.shields.io/github/downloads/Zazergel/BracketChecker/total) ![Contributors](https://img.shields.io/github/contributors/Zazergel/BracketChecker?color=dark-green) ![Forks](https://img.shields.io/github/forks/Zazergel/BracketChecker?style=social) ![Issues](https://img.shields.io/github/issues/Zazergel/BracketChecker) 
+  ![Downloads](https://img.shields.io/github/downloads/Zazergel/BracketChecker/total) ![Contributors](https://img.shields.io/github/contributors/Zazergel/BracketChecker?color=dark-green) ![Forks](https://img.shields.io/github/forks/Zazergel/BracketChecker?style=social) ![Issues](https://img.shields.io/github/issues/Zazergel/BracketChecker) 
+</div>
+
 
 ## Table Of Contents
 
@@ -35,10 +37,9 @@
 
 
 ## Built With
-* [Java](http://java.com/)
-* [Maven](https://maven.apache.org/)
-* [Spring Boot](https://spring.io/projects/spring-boot)
-* [Docker](https://www.docker.com/)
+<p align="left">
+    <img src="https://skillicons.dev/icons?i=java,maven,spring,docker" />
+</p>
 
 ### Installation
 
@@ -75,5 +76,5 @@ http://localhost:8080/api/checkBrackets
 
 ## Authors
 
-* **Zazergel** - *Java Developer* - [Zazergel](https://github.com/Zazergel) - *GitHub*
+ **[Zazergel](https://github.com/Zazergel/)**
 
