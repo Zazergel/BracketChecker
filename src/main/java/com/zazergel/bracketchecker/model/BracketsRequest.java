@@ -12,6 +12,6 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class BracketsRequest {
     @NotBlank(message = "Текст не должен быть пустым!")
-    @Size(max = 1000, message = "Размер проверяемого текста не должен превышать 500 символов!")
+    @Size(max = 1000, message = "Размер проверяемого текста не должен превышать 1000 символов!")
     private String text;
 }

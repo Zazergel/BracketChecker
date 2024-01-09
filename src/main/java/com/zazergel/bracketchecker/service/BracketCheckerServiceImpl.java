@@ -1,12 +1,12 @@
 package com.zazergel.bracketchecker.service;
 
+import com.zazergel.bracketchecker.model.BracketsResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import com.zazergel.bracketchecker.model.BracketsResponse;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 @Service
@@ -14,37 +14,35 @@ public class BracketCheckerServiceImpl implements BracketCheckerService {
 
     public ResponseEntity<BracketsResponse> checkBrackets(String text) {
         if (!isValidBracketPlacement(text)) {
-            log.info("Скобки расставлены НЕ корректно!");
+            log.info("Скобки в тексте расставлены НЕ корректно!");
             return ResponseEntity.ok(new BracketsResponse(false));
         }
-        log.info("Скобки расставлены корректно!");
+        log.info("Текст корректный!");
         return ResponseEntity.ok(new BracketsResponse(true));
     }
 
-    /*Данный метод удаляет все пробелы из текста, затем производит перебор по символам.
+    /*Данный метод удаляет все содержимое скобок и проверяет наличие пустых.
+    Затем проверяет сбалансированность открывающих и закрывающих скобок.
     Возвращает true, если все в порядке и false, если во время проверки будет найдено несоответствие условию задачи */
     public boolean isValidBracketPlacement(String text) {
-        String textWithoutSpaces = removeSpaceFromString(text);
-        Deque<Character> stack = new ArrayDeque<>();
-        for (int i = 0; i < textWithoutSpaces.length(); i++) {
-            char c = textWithoutSpaces.charAt(i);
-            if (c == '(') {
-                if (textWithoutSpaces.charAt(i + 1) == ')') {
-                    log.info("Обнаружены пустые скобки в тексте!");
+        Pattern emptyPatterns = Pattern.compile("\\(\\s*\\)");
+        Matcher emptyMatcher = emptyPatterns.matcher(text);
+        if (emptyMatcher.find()) {
+            return false;
+        }
+        int balance = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if (ch == '(') {
+                balance++;
+            } else if (ch == ')') {
+                balance--;
+                if (balance < 0) {
                     return false;
                 }
-                stack.push(c);
-            } else if (c == ')' && (stack.isEmpty() || stack.pop() != '(')) {
-                log.info("Обнаружены не закрытые скобки в тексте!");
-                return false;
             }
         }
-        return stack.isEmpty();
-    }
-
-    public String removeSpaceFromString(String text) {
-        log.info("Удаление пробелов из текста.");
-        return text.replaceAll("\\s+", "");
+        return balance == 0;
     }
 }
 
